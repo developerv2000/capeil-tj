@@ -6,10 +6,27 @@
     {# prettier-ignore-start #}
     <title>{% block title %}CAPEIL{% endblock title %}</title>
     {# prettier-ignore-end #}
+
+    {% load static %}
+
+    {# Normalize.css #}
+    <link rel="stylesheet" href="{% static 'plugins/normalize.css' %}" />
+
+    {# Glide #}
+    <link rel="stylesheet" href="{% static 'plugins/glide/glide.core.min.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/main/style.css' %}" />
   </head>
   <body>
     {# prettier-ignore-start #}
+    {% include 'layouts/header.html' %}
     {% block content %}{% endblock content %}
+    {% include 'layouts/footer.html' %}
     {# prettier-ignore-end #}
+
+    {# Glide #}
+    <script src="{% static 'plugins/glide/glide.min.js' %}"></script>
+
+    <script src="{% static 'assets/main/script.js' %}"></script>
   </body>
 </html>

@@ -1,5 +1,29 @@
 {% extends 'layouts/base.html' %}
+{% load static %}
 
 {% block content %}
-  <h1>Home</h1>
+  <setion class="glide home-glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        <li class="glide__slide">
+          <div class="welcome" style="background-image: url({% static 'images/home/welcome-banner.jpg' %});">
+            <div class="welcome__inner">
+              <h1 class="welcome__title">Были ли в вашей жизни моменты, когда вы внезапно начинали видеть все в новом свете?</h1>
+              <p class="welcome__text">…мы очень слабо используем наши таланты. Как часто человек проживает всю свою жизнь без малейшего представления о том, в чём состоит его талант, и есть ли этот талант вообще. Я знаю много людей, уверенных, что особых способностей у них нет ни в чём...</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="glide__slide">
+          <div class="quote-of-day" style="background-image: url({% static 'images/home/quotes-banner.jpg' %});">
+            <div class="quote-of-day__inner main-container">
+              <h4 class="quote-of-day__title">Цитата дня</h4>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      {% include 'components/glide-arrows.html' %}
+    </div>
+  </setion>
 {% endblock %}
