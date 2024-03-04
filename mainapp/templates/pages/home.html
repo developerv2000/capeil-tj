@@ -17,8 +17,8 @@
         <li class="glide__slide quote-of-day" style="background-image: url({% static 'images/home/quotes-banner.jpg' %});">
           <div class="quote-of-day__inner">
             <h4 class="quote-of-day__title">Цитата дня</h4>
-            <p class="quote-of-day__body">Не обязательно быть лучше всех — нужно быть лучше, чем неделю назад.</p>
-            <h5 class="quote-of-day__author">Эмин Кулиев</h5>
+            <p class="quote-of-day__body">{{ quote_of_day.body }}</p>
+            <h5 class="quote-of-day__author">{{ quote_of_day.author.name }}</h5>
           </div>
         </li>
       </ul>
