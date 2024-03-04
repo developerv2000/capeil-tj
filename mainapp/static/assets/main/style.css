@@ -92,9 +92,15 @@ a {
 }
 
 .main-title {
-    font-size: 16px;
+    font-size: 54px;
+    font-weight: 300;
 }
 
+.copyright {
+    max-width: 48px;
+    margin-bottom: 0;
+    font-size: 10px;
+}
 
 /* ------------ Header ------------ */
 .header {
@@ -169,27 +175,60 @@ a {
 
 
 /* ------------ Glide ------------ */
+.glide__track {
+    position: relative;
+}
+
+.glide__arrows-wrapper {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    pointer-events: none;
+    user-select: none;
+}
+
+.glide__arrows {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.glide__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px #0000003d;
+    pointer-events: all;
+    user-select: all;
+}
+
+.glide__arrow svg {
+    width: 32px;
+    height: 32px;
+    fill: #a3a3a3;
+}
 
 /* ------------ /end Glide ------------ */
 
 
 /* ------------ Home page ------------ */
+/* Glide */
 .home-glide .glide__slide {
     height: auto;
-}
-
-.welcome {
     background-size: cover;
-    background-position: center right;
+    background-position: bottom right;
 }
 
 .welcome__inner {
     display: flex;
     flex-direction: column;
-    max-width: 1320px;
+    max-width: 1480px;
     margin: auto;
-    padding-top: 160px;
-    padding-bottom: 160px;
+    padding: 156px 80px;
     color: #252323;
 }
 
@@ -209,9 +248,244 @@ a {
     text-align: justify;
 }
 
-.quote-of-day {
+.quote-of-day__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1320px;
     height: 100%;
-    background-size: cover;
+    margin: auto;
+    padding: 0 80px;
+    color: white;
 }
 
+.quote-of-day__title {
+    margin-bottom: 60px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: right;
+}
+
+.quote-of-day__body {
+    font-size: 24px;
+    font-weight: 300;
+    padding-right: 28%;
+    margin-bottom: 60px;
+}
+
+.quote-of-day__author {
+    font-size: 18px;
+    font-weight: 300;
+    text-align: right;
+    margin: 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: stretch;
+}
+
+.gallery__image {
+    object-fit: cover;
+}
+
+/* Philosophy */
+.philosophy {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.philosophy__inner {
+    flex-direction: column;
+}
+
+.philosophy__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 140px;
+}
+
+.philosophy__title {
+    max-width: 780px;
+    margin-bottom: 0;
+}
+
+.philosophy__subtitle {
+    max-width: 280px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: right;
+    color: #bbbbbb;
+}
+
+.philosophy__body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.philosophy__first-block {
+    max-width: 452px;
+    margin-left: 120px;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: justify;
+    color: #000000bd;
+}
+
+.philosophy__second-block {
+    max-width: 586px;
+}
+
+.philosophy__second-block-text {
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: justify;
+    color: #000000bd;
+}
+
+.philosophy__author {
+    font-size: 20px;
+    text-align: right;
+    color: #bbbbbb;
+}
+
+.philosophy__author-role {
+    font-size: 12px;
+    text-align: right;
+    color: #bbbbbb;
+}
+
+
+/* About */
+.about {
+    position: relative;
+    background-color: #f1f1f1;
+}
+
+.about__inner {
+    flex-direction: column;
+    padding-top: 72px;
+    padding-bottom: 100px;
+}
+
+.about__title {
+    margin-bottom: 40px;
+}
+
+.about__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    margin: 0 0 40px;
+    padding: 0;
+}
+
+.about__list-eng {
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.about__list-ru {
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.about__book {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+/* Vision */
+.vision__inner {
+    display: flex;
+}
+
+.vision__image {
+    width: 50%;
+}
+
+/* Expertise */
+.expertise__inner {
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.expertise__title {
+    margin-bottom: 0;
+}
+
+.expertise__tables {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+.expertise__table {
+    width: 25%;
+    padding: 12px 16px;
+    line-height: 1.6;
+    border: 1px solid black;
+}
+
+.expertise__table-title {
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.expertise__table-list {
+    font-size: 13px;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.expertise__tables-rows {
+    width: 25%;
+    margin-left: 24px;
+}
+
+.expertise__tables-rows .expertise__table {
+    width: 100%;
+}
+
+.expertise__table-hr {
+    margin-top: 32px;
+}
+
+.expertise__table-experience {
+    margin-top: 80px;
+}
+
+.expertise__table-marketing {
+    margin-left: -24px;
+}
+
+.expertise__table-sales {
+    margin-top: 24px;
+}
+
+.expertise__table-strategy {
+    margin-top: 60px;
+}
+
+/* Footer Banner */
+.footer-banner__image {
+    width: 100%;
+    display: flex;
+}
 /* ------------ /end Home page ------------ */

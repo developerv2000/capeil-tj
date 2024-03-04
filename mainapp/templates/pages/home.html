@@ -5,20 +5,20 @@
   <setion class="glide home-glide">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
-        <li class="glide__slide">
-          <div class="welcome" style="background-image: url({% static 'images/home/welcome-banner.jpg' %});">
-            <div class="welcome__inner">
-              <h1 class="welcome__title">Были ли в вашей жизни моменты, когда вы внезапно начинали видеть все в новом свете?</h1>
-              <p class="welcome__text">…мы очень слабо используем наши таланты. Как часто человек проживает всю свою жизнь без малейшего представления о том, в чём состоит его талант, и есть ли этот талант вообще. Я знаю много людей, уверенных, что особых способностей у них нет ни в чём...</p>
-            </div>
+        {# Welcome slide #}
+        <li class="glide__slide welcome" style="background-image: url({% static 'images/home/welcome-banner.jpg' %});">
+          <div class="welcome__inner">
+            <h1 class="welcome__title">Были ли в вашей жизни моменты, когда вы внезапно начинали видеть все в новом свете?</h1>
+            <p class="welcome__text">…мы очень слабо используем наши таланты. Как часто человек проживает всю свою жизнь без малейшего представления о том, в чём состоит его талант, и есть ли этот талант вообще. Я знаю много людей, уверенных, что особых способностей у них нет ни в чём...</p>
           </div>
         </li>
 
-        <li class="glide__slide">
-          <div class="quote-of-day" style="background-image: url({% static 'images/home/quotes-banner.jpg' %});">
-            <div class="quote-of-day__inner main-container">
-              <h4 class="quote-of-day__title">Цитата дня</h4>
-            </div>
+        {# Quote of day slide #}
+        <li class="glide__slide quote-of-day" style="background-image: url({% static 'images/home/quotes-banner.jpg' %});">
+          <div class="quote-of-day__inner">
+            <h4 class="quote-of-day__title">Цитата дня</h4>
+            <p class="quote-of-day__body">Не обязательно быть лучше всех — нужно быть лучше, чем неделю назад.</p>
+            <h5 class="quote-of-day__author">Эмин Кулиев</h5>
           </div>
         </li>
       </ul>
@@ -26,4 +26,169 @@
       {% include 'components/glide-arrows.html' %}
     </div>
   </setion>
+
+  <section class="gallery">
+    <img class="gallery__image" src="{% static 'images/home/gallery-1.jpg' %}" alt="class" />
+    <img class="gallery__image" src="{% static 'images/home/gallery-2.jpg' %}" alt="locker" />
+    <img class="gallery__image" src="{% static 'images/home/gallery-3.jpg' %}" alt="class" />
+  </section>
+
+  <section class="philosophy" id="philosophy">
+    <div class="philosophy__inner main-container">
+      {# Philosophy header #}
+      <div class="philosophy__header">
+        <h2 class="philosophy__title main-title">ПОСТИЖЕНИЕ ЕСТЬ РЕЗУЛЬТАТ ПРОЦЕССА РАЗВИТИЯ И ЭВОЛЮЦИИ, РОСТА И ТРАНСФОРМАЦИИ</h2>
+        <h3 class="philosophy__subtitle">ПРЕОБРАЗУЮЩИЙ ОПЫТ, ДЛЯ УМА И ДУХА. КАТАЛИЗАТОР ИЗМЕНЕНИЙ</h3>
+      </div>
+
+      {# Philosophy body #}
+      <div class="philosophy__body">
+        {% include 'components/copyright.html' %}
+
+        <p class="philosophy__first-block">Лиминальное пространство - момент свободы между двумя жесткими взглядами на мир или организационными структурами. Оно относится к переменам, которые происходят в одном человеке или в обществе, когда речь идет о масштабных переменах… [оно] открывает нам двери в мир возможного, где любые события и смысл вещей, равно как и “сама реальность”, могут быть представлены по-разному</p>
+
+        <div class="philosophy__second-block">
+          <p class="philosophy__second-block-text">Цель образования – помочь учащимся максимально понять окружающий мир и выявить свои внутренние таланты с тем, чтобы реализовать себя как личности и стать активными и сопереживающими гражданами своей страны.</p>
+
+          <p class="philosophy__author">КЕН РОБИНСОН</p>
+          <p class="philosophy__author-role">
+            ВЕДУЩИЙ МИРОВОЙ СПЕЦИАЛИСТ<br /> В ОБЛАСТИ<br /> ЧЕЛОВЕЧЕСКОГО РАЗВИТИЯ
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="about__inner main-container">
+      <h2 class="about__title main-title">CAPEIL</h2>
+
+      <ul class="about__list">
+        <li>
+          <p class="about__list-eng">Competence</p>
+          <p class="about__list-ru">Компетентность</p>
+        </li>
+
+        <li>
+          <p class="about__list-eng">Achievements</p>
+          <p class="about__list-ru">Достижения</p>
+        </li>
+
+        <li>
+          <p class="about__list-eng">Personal development</p>
+          <p class="about__list-ru">Развитие личности</p>
+        </li>
+
+        <li>
+          <p class="about__list-eng">Erudition</p>
+          <p class="about__list-ru">Эрудиция</p>
+        </li>
+
+        <li>
+          <p class="about__list-eng">Ideal</p>
+          <p class="about__list-ru">Идеал</p>
+        </li>
+
+        <li>
+          <p class="about__list-eng">Love of life</p>
+          <p class="about__list-ru">Любовь к жизни</p>
+        </li>
+      </ul>
+
+      {% include 'components/copyright.html' %}
+
+      <div class="about__book" style="background-image: url({% static 'images/home/book.jpg' %});"></div>
+    </div>
+  </section>
+
+  <section class="vision">
+    <div class="vision__inner">
+      <img class="vision__image" src="{% static 'images/home/vision-1.jpg' %}" alt="vision" />
+      <img class="vision__image" src="{% static 'images/home/vision-2.jpg' %}" alt="vision" />
+    </div>
+  </section>
+
+  <section class="expertise" id="expertise">
+    <div class="expertise__inner main-container">
+      <h2 class="expertise__title main-title">LAB экспертиза</h2>
+
+      <div class="expertise__tables">
+        {# HR #}
+        <div class="expertise__table expertise__table-hr">
+          <h6 class="expertise__table-title">HR</h6>
+
+          <ul class="expertise__table-list">
+            <li>Gap-анализ (изучение процессов, структура компании, штат)</li>
+            <li>Предложения по оптимизации процессов и штата</li>
+            <li>Персональный план развития сотрудников (индивидуальное интервью, тестирование, индивидуальный план развития)</li>
+            <li>Программа тренингов для развития компетенций, навыков</li>
+            <li>Гармонизация заработных плат и компенсаций</li>
+            <li>Поиск и подбор кадров</li>
+          </ul>
+        </div>
+
+        {# Experience #}
+        <div class="expertise__table expertise__table-experience">
+          <h6 class="expertise__table-title">Customer Experience</h6>
+
+          <ul class="expertise__table-list">
+            <li>Customer Journey</li>
+            <li>Анализ touchpointсу (digital and offline)</li>
+            <li>Предложения по улучшению клиентского опыта</li>
+            <li>Benchmarking</li>
+            <li>Сравнение с основными конкурентами</li>
+          </ul>
+        </div>
+
+        {# Row start #}
+        <div class="expertise__tables-rows">
+          {# Marketing #}
+          <div class="expertise__table expertise__table-marketing">
+            <h6 class="expertise__table-title">Marketing</h6>
+
+            <ul class="expertise__table-list">
+              <li>Анализ текущих каналов коммуникации (digital and offline) и позиционирование</li>
+              <li>Customer journey, UI/UX</li>
+              <li>Разработка программы позиционирования и продвижения</li>
+              <li>Выстраивание аналитики</li>
+              <li>Value preposition текущего продукта</li>
+            </ul>
+          </div>
+
+          {# Sales #}
+          <div class="expertise__table expertise__table-sales">
+            <h6 class="expertise__table-title">Sales</h6>
+
+            <ul class="expertise__table-list">
+              <li>Анализ текущего портфеля продуктов</li>
+              <li>Структура и каналы продаж</li>
+              <li>Предложение по бонусным схемам</li>
+              <li>Аттестация и программа развития сотрудников</li>
+              <li>Выстраивание аналитики</li>
+           </ul>
+          </div>
+        </div> {# Row ends #}
+
+        {# Strategy planning #}
+        <div class="expertise__table expertise__table-strategy">
+          <h6 class="expertise__table-title">Strategy planning</h6>
+
+          <ul class="expertise__table-list">
+            <li>Анализ текущей ситуации и изучение возможностей масштабирования деятельности</li>
+            <li>GAP-анализ (люди, инструменты, процессы)</li>
+            <li>Воркшоп по стратегическому планированию</li>
+            <li>Выработка ценностей, миссии, краткосрочной и долгосрочной стратегии</li>
+            <li>Предложения по масштабированию</li>
+            <li>Индивидуальные планы развития для топ-менеджмента компании</li>
+            <li>Политики, процедуры и инструкции</li>
+            <li>Программа тренингов для развития компетенций, навыков</li>
+         </ul>
+        </div>
+      </div> {# Expertise tables ends #}
+    </div>
+  </section>
+
+  <section class="footer-banner">
+    <img class="footer-banner__image" src="{% static 'images/home/footer-banner.jpg' %}" alt="CAPEIL">
+  </section>
 {% endblock %}
