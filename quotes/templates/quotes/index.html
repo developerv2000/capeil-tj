@@ -1,0 +1,16 @@
+{% extends 'quotes/base.html' %}
+
+{% block body_class %}quotes-index{% endblock body_class %}
+
+{% block body_content %}
+  <div class="quotes-list">
+    {% for quote in quote_list %}
+      <div class="quote-card">
+        <h6 class="quote-card__author">{{ quote.author }}</h6>
+        <p class="quote-card__quote">{{ quote.body }}</p>
+      </div>
+    {% empty %}
+      <p>No quotes!</p>
+    {% endfor %}
+  </div>
+{% endblock body_content %}

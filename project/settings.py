@@ -32,10 +32,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "debug_toolbar",
     "mainapp.apps.MainappConfig",
-    'authors.apps.AuthorsConfig',
-    'categories.apps.CategoriesConfig',
-    'quotes.apps.QuotesConfig',
+    "authors.apps.AuthorsConfig",
+    "categories.apps.CategoriesConfig",
+    "quotes.apps.QuotesConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -67,6 +69,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "mainapp.context_processors.template_based",
             ],
         },
     },
@@ -133,3 +136,8 @@ MEDIA_URL = "media/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Used for Django Debug Toolbar
+INTERNAL_IPS = [
+    "127.0.0.1",
+]

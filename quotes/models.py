@@ -18,6 +18,7 @@ class Quote(TimestampedModel, RandomizeableModel):
     author = models.ForeignKey(Author, on_delete=models.DO_NOTHING)
     body = models.TextField()
     categories = models.ManyToManyField(Category)
+    objects = models.Manager()
     with_related_objects = PrefetchedRelationsManager()
 
     def __str__(self):

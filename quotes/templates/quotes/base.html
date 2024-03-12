@@ -1,0 +1,9 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+  <div class="asided-layout">
+    {% include 'quotes/aside.html' %}
+    {% block body_content %}{% endblock body_content %}
+  </div>
+{% endblock %}
+

@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from quotes.models import Quote
 
-
 class HomePage(TemplateView):
     http_method_names = ("head", "get")
     template_name = "pages/home.html"
