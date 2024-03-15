@@ -9,5 +9,5 @@ class HomePage(TemplateView):
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        context["quote_of_day"] = Quote.get_random_item('with_related_objects')
+        context["quote_of_day"] = Quote.get_random_item('with_relations')
         return context

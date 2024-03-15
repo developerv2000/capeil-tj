@@ -1,5 +1,6 @@
 import random
 from django.db import models
+from django.utils.text import slugify
 
 
 class TimestampedModel(models.Model):
@@ -69,3 +70,23 @@ class RandomizeableModel(models.Model):
         random_item = manager_instance.get(pk=random_id)
 
         return random_item
+
+class SluggableByNameModel(models.Model):
+    """
+    A Django base model class for creating slug fields based on the 'name' field.
+    This class automatically generates a slug from the 'name' field and ensures its uniqueness.
+    """
+
+    slug = models.SlugField(max_length=255, unique=True)
+
+    class Meta:
+        abstract = True
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None) -> None:
+        self.slug = slugify(self.name)
+
+        # If 'name' field is updated, include 'slug' in update_fields to ensure it's updated
+        if update_fields is not None and "name" in update_fields:
+            update_fields = {"slug"}.union(update_fields)
+
+        return super().save(force_insert, force_update, using, update_fields)

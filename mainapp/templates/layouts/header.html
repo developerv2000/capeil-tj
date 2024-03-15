@@ -4,10 +4,10 @@
     <a class="logo" href="{% url 'home' %}"><img class="logo__image" src="{% static 'images/main/logo.png' %}" alt="CAPEIL logo" /></a>
 
     <navbar class="navbar">
-      <a class="navbar__link" href="{% url 'home' %}">Главная</a>
-      <a class="navbar__link" href="{% url 'quotes:index' %}">Цитаты</a>
-      <a class="navbar__link" href="{% url 'home' %}#philosophy">Философия</a>
-      <a class="navbar__link" href="{% url 'home' %}#expertise">LAB экспертиза</a>
+        <a class="navbar__link" href="{% url 'home' %}">Главная</a>
+        <a class="navbar__link {% if route_name == 'quotes:index' %}navbar__link--active{% endif %}" href="{% url 'quotes:index' %}">Цитаты</a>
+        <a class="navbar__link" href="{% url 'home' %}#philosophy">Философия</a>
+        <a class="navbar__link" href="{% url 'home' %}#expertise">LAB экспертиза</a>
     </navbar>
   </div>
 </header>

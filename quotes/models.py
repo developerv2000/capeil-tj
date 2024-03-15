@@ -4,7 +4,7 @@ from authors.models import Author
 from categories.models import Category
 
 
-class PrefetchedRelationsManager(models.Manager):
+class WithRelationsManager(models.Manager):
     """
     Custom manager that overrides the default queryset retrieval behavior to include
     eager loading of related objects.
@@ -19,7 +19,10 @@ class Quote(TimestampedModel, RandomizeableModel):
     body = models.TextField()
     categories = models.ManyToManyField(Category)
     objects = models.Manager()
-    with_related_objects = PrefetchedRelationsManager()
+    with_relations = WithRelationsManager()
+
+    class Meta:
+        ordering = ["-id"]
 
     def __str__(self):
         return self.body

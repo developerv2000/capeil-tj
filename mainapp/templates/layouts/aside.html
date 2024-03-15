@@ -1,0 +1,9 @@
+<aside class="aside">
+  <h2 class="secondary-title">Категории</h2>
+
+  <ul class="aside-categories theme-box">
+    {% for category in aside_categories %}
+      <li><a href="{% url 'categories:detail' category.slug %}">{{ category.name }}</a></li>
+    {% endfor %}
+  </ul>
+</aside>

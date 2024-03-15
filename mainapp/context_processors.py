@@ -12,7 +12,7 @@ def template_based(request):
 
         # Share data based on rendered template
         match template_name:
-            case 'quotes:index':
+            case 'quotes:index' | 'categories:detail':
                 data['aside_categories'] = Category.objects.all()
 
     return data

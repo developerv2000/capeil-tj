@@ -13,6 +13,8 @@ body {
 :root {
     --main-color: #B103C7;
     --text-color: #000000CC;
+    --theme-border-radius: 8px;
+    --theme-shadow-box: 0 0 12px 1px #00000012;
 }
 
 body::-webkit-scrollbar {
@@ -96,10 +98,23 @@ a {
     font-weight: 300;
 }
 
+.secondary-title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--main-color);
+}
+
 .copyright {
     max-width: 48px;
     margin-bottom: 0;
     font-size: 10px;
+}
+
+.theme-box {
+    background-color: white;
+    border-radius: var(--theme-border-radius);
+    box-shadow: var(--theme-shadow-box);
 }
 
 /* ------------ Header ------------ */
@@ -109,7 +124,7 @@ a {
     width: 100%;
     z-index: 10;
     background: white;
-    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 16%);
+    box-shadow: var(--theme-shadow-box)
 }
 
 .header__inner {
@@ -139,6 +154,10 @@ a {
     text-decoration: none;
 }
 
+.navbar__link--active {
+    color: var(--main-color);
+    font-weight: 500;
+}
 /* ------------ /end Header ------------ */
 
 
@@ -162,16 +181,113 @@ a {
 /* ------------ /end Footer ------------ */
 
 
-/* ------------ Main Tag ------------ */
-.main {
-    /* PUSH FOOTER TO THE BOTTOM */
-    flex-grow: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+/* ------------ Body, Main wrapper ------------ */
+.body {
+    min-height: 100vh;
 }
 
-/* ------------ /end Main Tag ------------ */
+.body--asided {
+    background-color: ghostwhite;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.main-wrapper {
+    /* As Main container */
+    width: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    /* PUSH FOOTER TO THE BOTTOM */
+    flex-grow: 1;
+}
+
+.body--asided .main-wrapper {
+    max-width: 1600px;
+    padding: 40px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* ------------ /end Body, Main wrapper ------------ */
+
+
+/* ------------ Aside ------------ */
+.aside {
+    min-width: 240px;
+}
+
+.aside-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+    padding: 16px 20px;
+    margin: 0;
+    list-style: none;
+    font-size: 15px;
+}
+
+.aside-categories a {
+    text-decoration: none;
+}
+
+.aside-categories a:hover {
+    text-decoration: underline;
+}
+/* ------------ /end Aside ------------ */
+
+
+/* ------------ Pagination ------------ */
+.pagination {
+    margin-top: 40px;
+}
+
+.pagination__list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 0px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pagination__link {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: var(--theme-shadow-box);
+}
+
+.pagination__item--active .pagination__link {
+    color: white;
+    background-color: var(--main-color);
+}
+
+.pagination__link--arrows .material-symbols-outlined {
+    font-size: 20px;
+}
+
+.pagination__link--dots {
+    align-items: flex-end;
+    font-weight: bold;
+    background-color: transparent;
+    box-shadow: none;
+}
+/* ------------ /end Pagination ------------ */
 
 
 /* ------------ Glide ------------ */
@@ -488,4 +604,71 @@ a {
     width: 100%;
     display: flex;
 }
+
 /* ------------ /end Home page ------------ */
+
+/* ------------ Quote pages ------------ */
+.quotes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Quote card */
+.quote-card {
+    padding: 20px;
+    font-size: 15px;
+}
+
+.quote-card__author {
+    margin-bottom: 12px;
+}
+
+.quote-card__author-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.quote-card__author-link:hover {
+    text-decoration: underline;
+}
+
+.quote-card__author-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.quote-card__body {
+    font-weight: 300;
+    color: black;
+}
+
+.quote-card__hr {
+    margin-bottom: 16px;
+    border: none;
+    border-top: 1px solid #00000024;
+}
+
+.quote-card__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.quote-card__categories-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.quote-card__categories-link {
+    text-decoration: none;
+}
+
+.quote-card__categories-link:hover {
+    text-decoration: underline;
+}
+/* ------------ /end Quote pages ------------ */

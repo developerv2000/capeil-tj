@@ -1,0 +1,23 @@
+<div class="quote-card theme-box">
+  <h6 class="quote-card__author">
+    <a class="quote-card__author-link" href="#">
+      <svg class="quote-card__author-icon">
+        <use xlink:href="#person"></use>
+      </svg>
+      {{ quote.author }}
+    </a>
+  </h6>
+
+  <p class="quote-card__body">{{ quote.body }}</p>
+  <hr class="quote-card__hr" />
+
+  <div class="quote-card__categories">
+    <svg class="quote-card__categories-icon">
+      <use xlink:href="#bookmark"></use>
+    </svg>
+
+    {% for category in quote.categories.all %}
+      <a class="quote-card__categories-link" href="#">{{ category.name }}</a>
+    {% endfor %}
+  </div>
+</div>

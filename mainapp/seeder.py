@@ -1,5 +1,6 @@
 import subprocess
 import os
+from django.utils.text import slugify
 from faker import Faker
 from authors.models import Author
 from quotes.models import Quote
@@ -14,7 +15,7 @@ def run():
     Can be executed via django`s built-in shell commands:
 
     python manage.py shell
-    import mainapp.seeder as seeder
+    from mainapp import seeder
     seeder.run()
     """
 
@@ -25,11 +26,11 @@ def run():
 
 def seed_database():
     # Categories
-    for _ in range(10):
+    for _ in range(33):
         Category.objects.create(name=fake.name())
 
     # Authors
-    for _ in range(10):
+    for _ in range(60):
         author = Author.objects.create(name=fake.name())
         quote = author.quote_set.create(body=fake.text())
         categories = Category.objects.order_by("?").all()[:2]

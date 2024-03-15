@@ -1,7 +1,7 @@
 {% extends 'layouts/base.html' %}
 
 {% block body_class %}
-  body--asided quotes-index
+  body--asided categories-detail
 {% endblock %}
 
 {# prettier-ignore-start #}
@@ -13,10 +13,10 @@
 {# prettier-ignore-end #}
 
 {% block content %}
-  <h1 class="secondary-title">Цитаты и Афоризмы</h1>
+  <h1 class="secondary-title">{{ category.name }}</h1>
 
   <div class="quotes-list">
-    {% for quote in page_obj %}
+    {% for quote in category.quote_set.all %}
       {# prettier-ignore-start #}
       {% include 'components/quote_card.html' with quote=quote %}
       {# prettier-ignore-end #}

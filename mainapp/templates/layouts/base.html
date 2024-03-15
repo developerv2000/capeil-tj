@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {# prettier-ignore-start #}
-    <title>{% block title %}CAPEIL{% endblock title %}</title>
-    {# prettier-ignore-end #}
+  {# prettier-ignore-start #}
+  {% with route_name=request.resolver_match.view_name %}
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>{% block title %}CAPEIL{% endblock title %}</title>
+  {# prettier-ignore-end #}
 
-    {% load static %}
+      {% load static %}
 
-    {# Normalize.css #}
-    <link rel="stylesheet" href="{% static 'plugins/normalize.css' %}" />
+      {# Normalize.css #}
+      <link rel="stylesheet" href="{% static 'plugins/normalize.css' %}" />
 
-    {# Glide #}
-    <link rel="stylesheet" href="{% static 'plugins/glide/glide.core.min.css' %}" />
+      {# Glide #}
+      <link rel="stylesheet" href="{% static 'plugins/glide/glide.core.min.css' %}" />
 
-    <link rel="stylesheet" href="{% static 'assets/main/style.css' %}" />
-  </head>
-  <body class="body {% block body_class %}{% endblock body_class %}">
-    {# prettier-ignore-start #}
-    {% include 'layouts/header.html' %}
-    {% block content %}{% endblock content %}
-    {% include 'layouts/footer.html' %}
-    {# prettier-ignore-end #}
+      {# Material symbols (used only in pagination) #}
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-    {# Glide #}
-    <script src="{% static 'plugins/glide/glide.min.js' %}"></script>
+      <link rel="stylesheet" href="{% static 'assets/main/style.css' %}" />
+    </head>
 
-    <script src="{% static 'assets/main/script.js' %}"></script>
-  </body>
+    <body class="body {% block body_class %}{% endblock %}">
+      {% include 'layouts/header.html' %}
+
+      <div class="main-wrapper">
+        {% block aside_wrapper %}
+          {% if aside %}
+              {% include 'layouts/aside.html' %}
+          {% endif %}
+        {% endblock aside_wrapper %}
+
+        <main class="main">{% block content %}{% endblock content %}</main>
+      </div>
+
+      {% include 'layouts/svg_sprite.html' %}
+
+      {% include 'layouts/footer.html' %}
+
+      {# Glide #}
+      <script src="{% static 'plugins/glide/glide.min.js' %}"></script>
+
+      <script src="{% static 'assets/main/script.js' %}"></script>
+    </body>
+  {% endwith %}
 </html>
