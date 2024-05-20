@@ -17,7 +17,7 @@
     </svg>
 
     {% for category in quote.categories.all %}
-      <a class="quote-card__categories-link" href="#">{{ category.name }}</a>
+      <a class="quote-card__categories-link" href="{% url 'categories:detail' category.slug %}">{{ category.name }}</a>
     {% endfor %}
   </div>
 </div>

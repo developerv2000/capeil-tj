@@ -13,3 +13,9 @@ class CategoryDetailView(DetailView):
     context_object_name = "category"
     template_name = "categories/detail.html"
     queryset = Category.with_quotes
+
+    def get_context_data(self, **kwargs) -> dict[str]:
+        context = super().get_context_data(**kwargs)
+        category_id = context["category"].id
+        context["quotes"] = Quote.with_relations.filter(categories__id=category_id).all()
+        return context
